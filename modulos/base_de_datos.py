@@ -10,7 +10,7 @@ estudiantes_legajo = [112233, 332211, 445566, 556677, 778899, 889900, 990011, 11
 estudiantes_nombre = ["Ofelia Muñoz", "Francisco Lopez", "Alex Romero", "Lucia Fernandez", "Pedro Gonzalez","Camila Herrera", "Marta Suarez",
                       "Diego Cabrera", "Ricardo Alvarez", "Sofia Molina","Tomas Duarte", "Paula Rios", "Leandro Vega", "Carla Navarro", 
                       "Elena Paredes","Julia Sosa", "Andres Marin", "Julieta Castro", "Ignacio Blanco", "Nora Campos","Marcos Ruiz", "Esteban Torres", 
-                      "Pilar Benitez", "Simon Morales", "Valeria Diaz","Lara Romero", "Rosa Cabrera", ""]
+                      "Pilar Benitez", "Simon Morales", "Valeria Diaz","Lara Romero", "Rosa Cabrera", "","","","",""]
 
 estudiantes_genero = [ "F", "M", "X", "F", "M", "F", "F", "M", "M", "F", "X", "F", "M", "F", "F", "F", "X", "F", "M", "F", "M", "M", "F", "X", 
                      "F", "F", "F", "", "", ""]
@@ -19,7 +19,6 @@ estado = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
 
 
 
-
-
+estudiantes_promedio = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 
