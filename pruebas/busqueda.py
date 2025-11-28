@@ -33,39 +33,3 @@ def ingresar_en_indice(lista_ingresada, elemento, indice):
             lista_ingresada[i] = elemento
 #****************************************************************************************************
 
-
-#****************************************************************************************************
-#imprimir una matriz
-
-def imprimir_fila(fila_ingresada):
-# proposito: imprime una lista como fila visual de matriz.
-# parametro: fila_ingresada/ fila a imprimir en formato matriz.
-    salida = ""
-
-    for i in range(len(fila_ingresada)):
-        if i == 0:
-            salida += "|"
-            salida += str(fila_ingresada[i])
-           
-        elif i == len(fila_ingresada):
-            salida += "|"
-            salida += str(fila_ingresada[i])
-
-        else:
-            salida += "|"
-            salida += str(fila_ingresada[i])
-            
-    salida += "|"  
-
-    return salida
-
-
-def imprimir_matriz(matriz_ingresada):
-    # proposito: imprime una lista de listas en formato visual de matriz.
-    # parametro: matriz/matriz ingresada/lista de listas.
-    for fila in matriz_ingresada:
-        print(imprimir_fila(fila))
-
-#**************************************************************************************************** 
-
-
