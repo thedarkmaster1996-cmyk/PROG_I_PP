@@ -1,3 +1,22 @@
+
+def buscar_indice_disponible(lista_estados):
+#proposito : devuelve el indice disponible de una lista.
+        #  *EN CASO DE NO HABER INDICE DISPONIBLE RETORNA FALSE*
+#parametro : lista_estados/lista ingresada de estados
+
+    contador = 0
+    resultado = None
+    for i in range(len(lista_estados)):        
+        if lista_estados[i] == 0 and contador == 0:
+            contador +=1
+            resultado = i
+    if contador == 0:
+        resultado = False
+    return resultado
+
+
+
+
 def pasar_a_minuscula(texto_ingresado :str):
     """
     proposito : pasar todos los caracteres de una cadena a minusculas
@@ -131,4 +150,17 @@ def numero_entre_1_y_10(ingreso:int):
     if (ingreso) >= 1 and ingreso <= 10:
         salida = True
     else: salida = False
+    return salida
+
+
+def esta_en_lista(e,l):
+    """
+    proposito:busca en una lista dada la existencia de un elemendo dado.
+    parametros: e/ elemento a buscar
+                l/ lista de elementos
+    """
+    salida = False
+    for i in l:
+       if i == e:
+           salida = True
     return salida

@@ -1,5 +1,17 @@
 import validaciones
 
+def ingresar_en_indice(lista_ingresada, elemento, indice):
+    """
+    proposito: modifica el elemento del indice dado por el elemento dado en la lista dada.
+    parametros: lista_ingresada/lista a modificar
+                elemento/elemento por el que se reemplaza el elemento con el indice dado
+                indice/indice del elemento
+    """
+    for i in range(len(lista_ingresada)):
+        if i == indice:
+            lista_ingresada[i] = elemento
+
+
 
 def cargar_genero_de_estudiante(lista_gen,ind):
     """
@@ -42,15 +54,15 @@ def cargar_apellido_nombre_estudiante(list_noms,ind_alumn):
         
         while True:
             apellido = input("\t\tdigite el apellido del del estudiante\n :")
-            if validaciones.solo_texto(apellido) == True:
-                apellido_validado = validaciones.a_minuscula(apellido)
+            if validaciones.solo_cadena(apellido) == True:
+                apellido_validado = validaciones.pasar_a_minuscula(apellido)
                 break
             else: print("\t\tapellido invalido vuelva a intentarlo")
 
         while True:
             nombre = input("\t\tdigite el nombre del estudiante\n :")
-            if validaciones.solo_texto(nombre) == True:
-                nombre_validado = validaciones.a_minuscula(nombre)
+            if validaciones.solo_cadena(nombre) == True:
+                nombre_validado = validaciones.pasar_a_minuscula(nombre)
                 break
             else: print("\t\tnombre invalido vuelva a intentarlo")
         break
@@ -65,7 +77,7 @@ def cargar_apellido_nombre_estudiante(list_noms,ind_alumn):
 
 def cargar_notas_de_alumno(indice_alumno,l_matriz,l_alumnos):
 
-     # falta validad : rompe cuando no se ingresa un entero por nota    
+      
     for i in range(len(l_matriz[indice_alumno])):
        
         
@@ -92,7 +104,7 @@ def ingresar_nota(indice_materia,list_alumnos,ind_alumno): # validada
         if  validaciones.es_entero(nota_ingreso) == True:
 
             nota = int(nota_ingreso)
-            if numero_entre_1_y_10(nota) == True:
+            if validaciones.numero_entre_1_y_10(nota) == True:
         
                 salida = nota
                 break
@@ -115,9 +127,9 @@ def cargar_legajo(lista_de_legajos,indice):
     while True:
       
         numero = input("\tingrese el legajo del alumno\n\tnumero entero de seis cifras positivo\n\t:")
-        if len(numero) == 6 and es_entero(numero) == True and ord(numero[0]) != 45 :
+        if len(numero) == 6 and validaciones.es_entero(numero) == True and ord(numero[0]) != 45 :
             valor = int(numero)
-            if esta_en_lista(valor,lista_de_legajos) == False:
+            if validaciones.esta_en_lista(valor,lista_de_legajos) == False:
             
                 lista_de_legajos[indice] = numero
                 break
