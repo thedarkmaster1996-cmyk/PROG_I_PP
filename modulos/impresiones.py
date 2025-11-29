@@ -1,3 +1,5 @@
+
+
 def imprimir_en_pantalla(dato_ingresado):
     """
     proposito: imprime el dato dado

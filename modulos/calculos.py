@@ -1,6 +1,7 @@
 from base_de_datos import *
 from validaciones import *
 from ordenamiento import *
+from impresiones import *
 
 def sumar_fila_numeros(lista_de_numeros) -> int:
     
@@ -30,7 +31,7 @@ def promedio_de_materia_en_matriz_de_notas(matriz_ingresada,indice_de_la_materia
 # promedio de notas de un alumno por su indice   retorna el promedio
 
 
-
+#        usar para buscar por legajo
 
 def primer_indice(lista, elemento):
     salida = None
@@ -38,6 +39,48 @@ def primer_indice(lista, elemento):
         if lista[i] == elemento:
             salida = i
     return salida
+
+
+###########################
+
+def buscar_alumno_por_promedio(legajo_list: list, nombre_list: list, genero_list: list, calificaciones_mtz: list, promedios_list) -> None:
+    
+    existe_legajo = 0
+    while True:
+        
+        legajo_ingresado = input("\t\tIngrese el legajo que desea buscar\n: ")
+
+        while solo_numeros(legajo_ingresado) == False or len(legajo_ingresado) != 6:
+            
+            legajo_ingresado = input("\t\tlegajo inexistente.\nIngrese el legajo que desea buscar\n: ")
+            validar_int = solo_numeros(legajo_ingresado)
+
+        for i in range(len(legajo_list)):
+
+            if int(legajo_ingresado) == legajo_list[i]:
+
+                print(f"\nlejago: {legajo_list[i]} alumno: {nombre_list[i]} genero: {genero_list[i]} promedio : {promedios_list[i]}")
+            
+
+                for j in range(len(calificaciones_mtz[i])): 
+                    print(f"Nota Materia_{j+1}: {calificaciones_mtz[i][j]}")
+                existe_legajo = 1
+                break
+            else:
+                continue
+        if existe_legajo == 0:
+            print("\t   legajo inexistente")
+            
+        # preguntar si quiere ver otro alumno
+        selleccion = input("\tquiere buscar otro alumno?\n-s- para si / cualquier tecla para volver al menu\n:")
+        if pasar_a_minuscula(selleccion) != "s":
+            break
+    
+
+
+
+
+##########################
 
 
 def promedio_materias(matriz_notas):

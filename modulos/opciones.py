@@ -68,7 +68,10 @@ def opcion_5():
 
 
 def opcion_6():
-    pass
+    calcular_promedio_alumnos(estado,matriz_de_calificaciones,estudiantes_promedio)
 
+    imprimir_lista(estudiantes_legajo,"LEGAJOS",estado)
+
+    buscar_alumno_por_promedio(estudiantes_legajo, estudiantes_nombre, estudiantes_genero, matriz_de_calificaciones, estudiantes_promedio)
 
 
