@@ -64,4 +64,11 @@ def opcion_4():
    
 
 def opcion_5():
+    promedio_materias(matriz_de_calificaciones)
+
+
+def opcion_6():
     pass
+
+
+

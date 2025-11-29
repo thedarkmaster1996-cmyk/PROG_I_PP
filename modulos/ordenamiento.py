@@ -1,6 +1,6 @@
 from validaciones import *
-from calculos import *
 from base_de_datos import *
+from calculos import *
 
 def ordenamiento_burbuja_list(lista):
     n = len(lista)
