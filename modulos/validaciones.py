@@ -1,4 +1,17 @@
 
+
+
+def valor_de_1_a_5(valor_ingresado:str) -> bool:
+    salida = False
+    if ord(valor_ingresado) >= 49 and ord(valor_ingresado) <= 53:
+        salida = True
+
+    return salida
+
+
+
+
+
 def buscar_indice_disponible(lista_estados):
 #proposito : devuelve el indice disponible de una lista.
         #  *EN CASO DE NO HABER INDICE DISPONIBLE RETORNA FALSE*

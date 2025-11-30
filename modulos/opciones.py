@@ -75,3 +75,10 @@ def opcion_6():
     buscar_alumno_por_promedio(estudiantes_legajo, estudiantes_nombre, estudiantes_genero, matriz_de_calificaciones, estudiantes_promedio)
 
 
+def opcion_7():
+    mostar_notas_por_materia(matriz_de_calificaciones)
+
+
+
+
+

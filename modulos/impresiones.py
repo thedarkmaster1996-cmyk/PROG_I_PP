@@ -1,4 +1,4 @@
-
+from validaciones import *
 
 def imprimir_en_pantalla(dato_ingresado):
     """
@@ -6,6 +6,56 @@ def imprimir_en_pantalla(dato_ingresado):
     parametro: dato_ingresado/ dato a imprimir en pantalla
     """
     print(dato_ingresado)
+
+
+
+
+def mostar_notas_por_materia(matriz_cals:list):
+    
+    #Se pide el número de la materia que desea contabilizar cuántas veces se repite una nota:
+    numero = 0
+    while True: 
+
+        num_seleccionado = input("\tver cantidad individual de notas numericas iguales en una materia especifica\n\tmaterias disponibles: | 1 - 2 - 3 - 4 - 5 | ")
+
+
+        if es_entero(num_seleccionado) and valor_de_1_a_5(num_seleccionado):
+            numero = int(num_seleccionado)
+            break
+        else: 
+            print("\tmateria inexistente")
+            print("\tmaterias disponibles: | 1 - 2 - 3 - 4 - 5 |")
+    #Se valida que se haya ingresado un entero, y que esté dentro del valor esperado (1-5)
+    
+    
+
+
+
+    #Se inicializa una variable para registrar la cantidad de veces que se repite un valor:
+    
+    cantidad_notas_individuales = [0,0,0,0,0,0,0,0,0,0]
+
+
+
+    #Se recorre columna por columna y se contabiliza la nota de cada una.
+
+    for i in range(len(matriz_cals)):
+
+        nota = matriz_cals[i][numero - 1]
+
+        if nota >= 1 and nota <= 10:
+            cantidad_notas_individuales[nota - 1] += 1
+    
+
+    
+    print(f"Materia_{numero}: ")
+    print("  ")
+
+    for j in range(len(cantidad_notas_individuales)):
+
+        print(f"veces que se repite la nota {j+1} : {cantidad_notas_individuales[j]}")
+
+
 
 
 ####################################
