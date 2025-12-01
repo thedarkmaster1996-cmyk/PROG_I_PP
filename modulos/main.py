@@ -9,6 +9,9 @@ from ordenamiento import *
 
 
 def opcion_1():
+    """
+        proposito: realiza la carga de datos de un estudiante en las listas y matriz correspondientes
+    """
 
     if validaciones.buscar_indice_disponible(estado) != False:
 
@@ -33,6 +36,9 @@ def opcion_1():
 
 
 def opcion_2():
+    """
+        proposito: muestra todos los datos cargados en el sistema
+    """
 
     # esta mal, pide mostrar todo ++ necesito una funcion que imprima prolijo listas
 
@@ -53,6 +59,9 @@ def opcion_2():
 
 
 def opcion_3():
+    """
+        proposito: calcula y muestra el promedio de los estudiantes
+    """
 
     calcular_promedio_alumnos(estado,matriz_de_calificaciones,estudiantes_promedio)
 
@@ -61,25 +70,36 @@ def opcion_3():
 
 
 def opcion_4():
+    """
+        proposito: ordena y muestra los datos de los estudiantes por promedio asc/desc
+    """
 
     ordenar_promedios(matriz_de_calificaciones , estado, estudiantes_legajo, estudiantes_nombre, estudiantes_genero, estudiantes_promedio)
    
 
 def opcion_5():
+    """
+        proposito: muestra la materia con mayor promedio general
+    """
     promedio_materias(matriz_de_calificaciones)
 
 
 def opcion_6():
+    """
+        proposito: buscar un alumno por su legajo e imprimir todos sus datos
+    """
 
     calcular_promedio_alumnos(estado,matriz_de_calificaciones,estudiantes_promedio)
 
     imprimir_lista(estudiantes_legajo,"LEGAJOS",estado)
 
-    buscar_alumno_por_promedio(estudiantes_legajo, estudiantes_nombre, estudiantes_genero, matriz_de_calificaciones, estudiantes_promedio)
+    buscar_alumno_por_legajo(estudiantes_legajo, estudiantes_nombre, estudiantes_genero, matriz_de_calificaciones, estudiantes_promedio)
 
 
 def opcion_7():
-
+    """
+        proposito: mostrar cuantas veces se repite cada calificación en una materia dada
+    """
     mostar_notas_por_materia(matriz_de_calificaciones)
 
 
@@ -88,17 +108,14 @@ def opcion_7():
 mensaje_menu = "\t\tBIENVENIDO A GESTION DE ALUMNOS\nOpciones :\n1 - Realizar la carga de los datos\n2 - Mostrar todos los datos\n3 - Calcular el promedio de los estudiante\n4 - Ordenar y mostrar los datos de los estudiantes asc/des\n5 - Mostrar la materia con mayor promedio general\n6 - mostrar todos los datos por legajo\n7 - mostrar las veces se repiten calificaciónes en una asignatura\n8 - salir"
 
 
-def opcion_valida(opcion_ingresada) -> bool:
-    
-    salida = False
-    if ord(opcion_ingresada) >= 49 and ord(opcion_ingresada) <= 56:
-        salida = True
-    return salida
 
 
-def sin_datos_cargados(li_estados) -> bool:
+
+def sin_datos_cargados(li_estados:list) -> bool:
     """
     proposito: verifica si hay datos cargados en el sistema
+    args:  
+        li_estados : lista de estados
     """
     salida = True
 

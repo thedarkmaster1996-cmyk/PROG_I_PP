@@ -1,11 +1,14 @@
 import validaciones
 
-def ingresar_en_indice(lista_ingresada, elemento, indice):
+
+def ingresar_en_indice(lista_ingresada:list, elemento:None, indice:int) -> None:
     """
-    proposito: modifica el elemento del indice dado por el elemento dado en la lista dada.
-    parametros: lista_ingresada/lista a modificar
-                elemento/elemento por el que se reemplaza el elemento con el indice dado
-                indice/indice del elemento
+    proposito: ingresa un elemento en la lista dada en el indice dado
+
+    Args:
+        lista_ingresada : lista donde se ingresara el elemento
+        elemento : elemento a ingresar
+        indice : indice donde se ingresara el elemento
     """
     for i in range(len(lista_ingresada)):
         if i == indice:
@@ -13,11 +16,13 @@ def ingresar_en_indice(lista_ingresada, elemento, indice):
 
 
 
-def cargar_genero_de_estudiante(lista_gen,ind):
+def cargar_genero_de_estudiante(lista_gen:list, ind:int) -> None:
     """
-    proposito: ingresa el genero de un estudiante en la lista "genero"
-    parametros: lista_gen/ lista de generos m,f,x ingresada
-                ind/ indice del estudiante
+    proposito: cargar el genero de un estudiante en la lista de generos dada en el indice dado
+
+    Args:
+        lista_gen : lista de generos donde se cargara el genero
+        ind : indice donde se cargara el genero
     """
 
     while True:
@@ -39,14 +44,13 @@ def cargar_genero_de_estudiante(lista_gen,ind):
 
 
 
-
-
-def cargar_apellido_nombre_estudiante(list_noms,ind_alumn):
+def cargar_apellido_nombre_estudiante(list_noms:list, ind_alumn:int) -> None:
 
     """
-    proposito: ingresar el apellido y el nombre de un estudiante en el indice dado de la lista de estudiantes dada.
-    parametros: list_noms/ lista de nombres de estudiantes
-                ind_alumn/ indice donde se va cargar el apellido y nombre del alumno
+    proposito: cargar el apellido y nombre de un estudiante en la lista de nombres dada en el indice dado
+    Args:
+        list_noms : lista de nombres donde se cargara el nombre
+        ind_alumn : indice donde se cargara el nombre
     """
     apellido_validado = ""
     nombre_validado = ""
@@ -72,10 +76,15 @@ def cargar_apellido_nombre_estudiante(list_noms,ind_alumn):
 
 
 
+def cargar_notas_de_alumno(indice_alumno:int, l_matriz:list ,l_alumnos:list) -> None:
+    """
+    proposito: cargar las notas de un alumno en la matriz de calificaciones dada en el indice dado
 
-
-
-def cargar_notas_de_alumno(indice_alumno,l_matriz,l_alumnos):
+    Args:
+        indice_alumno : indice del alumno a cargar notas
+        l_matriz : lista de listas con las calificaciones
+        l_alumnos : lista de nombres de alumnos
+    """
 
       
     for i in range(len(l_matriz[indice_alumno])):
@@ -85,15 +94,17 @@ def cargar_notas_de_alumno(indice_alumno,l_matriz,l_alumnos):
 
 
 
-
-
-
-
-def ingresar_nota(indice_materia,list_alumnos,ind_alumno): # validada
+def ingresar_nota(indice_materia:int, list_alumnos:list, ind_alumno:int) -> int:
     """
-    proposito : solicita y valida una nota comprendida entre 1 y 10 inclusive
-    validacion: una vez ingresado un dato validado correctamente retorna la nota de no ser asi solicita la una nota nuevamente.
-    
+    proposito: ingresa una nota validada para un alumno en una materia dada
+
+    Args:
+        indice_materia : indice de la materia
+        list_alumnos : lista de alumnos
+        ind_alumno : indice del alumno
+
+    Returns:
+        int: nota validada
     """
     alumno = list_alumnos[ind_alumno]
     while True:
@@ -116,12 +127,12 @@ def ingresar_nota(indice_materia,list_alumnos,ind_alumno): # validada
 
 
 
-
-def cargar_legajo(lista_de_legajos,indice):
+def cargar_legajo(lista_de_legajos:list, indice:int) -> None:
     """
-    propopito: ingresa legajo de alumno validado a lista de legajos en el indice dado
-    parametros: lista_de_legajos/ lista dada de legajos
-                indice/ indice dado de la lista
+    proposito: cargar el legajo de un estudiante en la lista de legajos dada en el indice dado
+    Args:
+        lista_de_legajos : lista de legajos donde se cargara el legajo
+        indice : indice donde se cargara el legajo
     """
     
     while True:

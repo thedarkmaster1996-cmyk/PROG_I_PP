@@ -3,7 +3,16 @@ from validaciones import *
 from ordenamiento import *
 from impresiones import *
 
-def sumar_fila_numeros(lista_de_numeros) -> int:
+
+def sumar_fila_numeros(lista_de_numeros:list) -> int:
+    """
+    proposito: suma los elementos de una lista de numeros y retorna la suma
+    Args:
+        lista_de_numeros : lista de elementos de tipo numérico
+
+    Returns:
+        acumulador : suma de los elementos de la lista y retorna la suma
+    """
     
     acumulador = 0
     for numero in lista_de_numeros:
@@ -12,14 +21,17 @@ def sumar_fila_numeros(lista_de_numeros) -> int:
 
 
 
-#######################
+def promedio_de_materia_en_matriz_de_notas(matriz_ingresada:list ,indice_de_la_materia:int) -> float:
+    """
+    proposito: calcula el promedio de una materia dada por su indice en una matriz de notas
 
+    Args:
+        matriz_ingresada : lista de listas con las calificaciones
+        indice_de_la_materia : indice de la materia a promediar
 
-
-
-#promedioa las calificaciones de una materia dada por el indice
-
-def promedio_de_materia_en_matriz_de_notas(matriz_ingresada,indice_de_la_materia):
+    Returns:
+        float: promedio de la materia
+    """
     acumulador = 0
     for fila in matriz_ingresada:
         acumulador += fila[indice_de_la_materia]
@@ -28,12 +40,17 @@ def promedio_de_materia_en_matriz_de_notas(matriz_ingresada,indice_de_la_materia
 
 
 
-# promedio de notas de un alumno por su indice   retorna el promedio
+def primer_indice(lista:list, elemento:None) -> int:
+    """
+    proposito: busca el primer indice de un elemento en una lista
 
+    Args:
+        lista : lista donde se buscara el elemento
+        elemento : elemento a buscar
 
-#        usar para buscar por legajo
-
-def primer_indice(lista, elemento):
+    Returns:
+        int: indice del primer elemento encontrado
+    """
     salida = None
     for i in range(len(lista)):
         if lista[i] == elemento:
@@ -41,9 +58,17 @@ def primer_indice(lista, elemento):
     return salida
 
 
-###########################
 
-def buscar_alumno_por_promedio(legajo_list: list, nombre_list: list, genero_list: list, calificaciones_mtz: list, promedios_list) -> None:
+def buscar_alumno_por_legajo(legajo_list: list, nombre_list: list, genero_list: list, calificaciones_mtz: list, promedios_list) -> None:
+    """
+    proposito: busca y muestra un alumno por su legajo
+    Args:
+        legajo_list : lista de legajos
+        nombre_list : lista de nombres
+        genero_list : _lista de generos
+        calificaciones_mtz :  lista de listas de calificaciones
+        promedios_list : _lista de promedios
+    """
     
     existe_legajo = 0
     while True:
@@ -78,12 +103,12 @@ def buscar_alumno_por_promedio(legajo_list: list, nombre_list: list, genero_list
     
 
 
-
-
-##########################
-
-
-def promedio_materias(matriz_notas):
+def promedio_materias(matriz_notas:list) -> None:
+    """
+    proposito: muestra la materia con el promedio mas alto
+    Args:
+        matriz_notas : lista de listas con las calificaciones
+    """
    
     proms_materias = [0,0,0,0,0]
     
@@ -99,41 +124,49 @@ def promedio_materias(matriz_notas):
 
     print(f"promedio de materia mas alto : materia_{indice_materia + 1} promedio : {proms_materias2[0]:.1f}")
    
-    """
     
-
- 
+    
+def promedio_alumno(matriz_de_notas:list,indice_de_alumno:int) -> float:
     """
+    proposito: calcula el promedio de un alumno dado por su indice en una matriz de notas
+    Args:
+        matriz_de_notas : lista de listas con las calificaciones
+        indice_de_alumno : indice del alumno a promediar
 
-
-
-
-
-
-#######################
-def promedio_alumno(matriz_de_notas,indice_de_alumno):
+    Returns:
+        float: promedio del alumno
+    """
     promedio = sumar_fila_numeros(matriz_de_notas[indice_de_alumno]) / len(matriz_de_notas[indice_de_alumno])
 
     return promedio
 
 
 
-
-
-
-
-def calcular_promedio_alumnos(estados_lista, notas_matriz, promedio_estudiantes):
+def calcular_promedio_alumnos(estados_lista:list, notas_matriz:list, promedio_estudiantes:list) -> None:
+    """
+    proposito: calcula el promedio de todos los alumnos y los guarda en la lista de promedios
+    Args:
+        estados_lista : lista de estados
+        notas_matriz : lista de listas con las calificaciones
+        promedio_estudiantes : lista de promedios
+    """
    
     for i in range(len(estados_lista)):
         if estados_lista[i] != 0 :
             promedio_estudiantes[i] = promedio_alumno(notas_matriz,i)
     
 
-
-
-
         
-def imprimir_promedio_alumnos(estados_lista, notas_matriz, promedio_estudiantes, nombres_estudiantes, legajo_estudiante):
+def imprimir_promedio_alumnos(estados_lista:list, notas_matriz:list, promedio_estudiantes:list, nombres_estudiantes:list, legajo_estudiante:list) -> None:
+    """
+    proposito: imprime el promedio de todos los alumnos con sus datos
+    Args:
+        estados_lista : lista de estados
+        notas_matriz : lista de listas con las calificaciones
+        promedio_estudiantes : lista de promedios
+        nombres_estudiantes : lista de nombres
+        legajo_estudiante : lista de legajos
+    """
    
     for i in range(len(estados_lista)):
         if estados_lista[i] != 0:
