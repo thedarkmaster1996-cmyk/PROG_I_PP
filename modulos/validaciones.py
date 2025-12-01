@@ -2,6 +2,14 @@
 
 
 def valor_de_1_a_5(valor_ingresado:str) -> bool:
+    """
+    proposito: valida si el valor ingresado esta entre 1 y 5 en formato str
+    Args:
+        valor_ingresado : valor a validar
+
+    Returns:
+        bool: True si es valido False si no
+    """
     salida = False
     if ord(valor_ingresado) >= 49 and ord(valor_ingresado) <= 53:
         salida = True
@@ -12,11 +20,15 @@ def valor_de_1_a_5(valor_ingresado:str) -> bool:
 
 
 
-def buscar_indice_disponible(lista_estados):
-#proposito : devuelve el indice disponible de una lista.
-        #  *EN CASO DE NO HABER INDICE DISPONIBLE RETORNA FALSE*
-#parametro : lista_estados/lista ingresada de estados
+def buscar_indice_disponible(lista_estados:list) -> int:
+    """  
+    proposito: busca el primer indice disponible en la lista de estados
+    Args:
+        lista_estados : lista de estados
 
+    Returns:
+        int: indice disponible o False si no hay disponibles
+    """
     contador = 0
     resultado = None
     for i in range(len(lista_estados)):        
@@ -30,9 +42,14 @@ def buscar_indice_disponible(lista_estados):
 
 
 
-def pasar_a_minuscula(texto_ingresado :str):
+def pasar_a_minuscula(texto_ingresado :str) -> str:
     """
-    proposito : pasar todos los caracteres de una cadena a minusculas
+    proposito: convierte una cadena de texto a minusculas
+    Args:
+        texto_ingresado : cadena de texto a convertir a minusculas
+
+    Returns:
+        str: cadena de texto en minusculas
     """
 
     salida = ""
@@ -52,10 +69,12 @@ def pasar_a_minuscula(texto_ingresado :str):
     return salida
 
 
-def solo_cadena(dato_a_evaluar:str):
+def solo_cadena(dato_a_evaluar:str) -> bool:
 
     """
-    proposito: determina si todos los caracteres representan un numero
+    proposito: determina si todos los caracteres representan una letra
+    Returns:
+        bool: True si todos los caracteres son letras, False si no
     """
 
     salida = True
@@ -68,10 +87,12 @@ def solo_cadena(dato_a_evaluar:str):
     return salida
 
 
-def solo_numeros(dato_a_evaluar:str):
+def solo_numeros(dato_a_evaluar:str) -> bool:
 
     """
     proposito: determina si todos los caracteres representan un numero
+    Returns:
+        bool: True si todos los caracteres son numeros, False si no
     """
     salida = True
     for digito in dato_a_evaluar:
@@ -81,10 +102,14 @@ def solo_numeros(dato_a_evaluar:str):
     return salida
 
 
-def validar_si_es_10(nota_ingresada:str):
+def validar_si_es_10(nota_ingresada:str) -> bool:
     """
-    proposito: indica si la nota ingresada es 10
+    proposito: valida si la nota ingresada es 10
+    Args:   
+        nota_ingresada (str): nota a validar en formato str
 
+    Returns:
+        bool: True si la nota es 10, False si no
     """
     if ord(nota_ingresada[0]) == 49 and ord(nota_ingresada[1]) == 48 and len(nota_ingresada) == 2:
         salida = True
@@ -93,9 +118,14 @@ def validar_si_es_10(nota_ingresada:str):
     return salida
 
 
-def nota_valida(nota_a_evaluar:str):
+def nota_valida(nota_a_evaluar:str) -> bool:
     """
-    PROPOSITO: INDICA SI LA NOTA INGRESADA ES VALIDA ENTRE EL 1 Y EL 10
+    proposito: valida si la nota ingresada es valida (entre 1 y 10)
+    Args:
+        nota_a_evaluar : nota a validar en formato str
+
+    Returns:
+        bool: True si la nota es valida, False si no
     """
     salida = False
 
@@ -109,11 +139,12 @@ def nota_valida(nota_a_evaluar:str):
     return salida
 
 
-def ingresar_nota():
-    """
-    proposito : solicita y valida una nota comprendida entre 1 y 10 inclusive
-    validacion: una vez ingresado un dato validado correctamente retorna la nota de no ser asi solicita la una nota nuevamente.
+def ingresar_nota() -> str:
     
+    """
+    proposito: ingresa una nota validada para un alumno en una materia dada
+    Returns:
+        str: nota validada
     """
     
     while True:
@@ -133,12 +164,15 @@ def ingresar_nota():
 
 def es_entero(cadena:str) -> bool:
     """
-    proposito: indica si un dato de tipo cadena reoresenta un numero entero positivo o negativo
-    retorna:True en caso de ser un entero de lo contrario False 
-    parametro: cadena/ Cadena de tipo str a verificar.
+    proposito: determina si la cadena ingresada representa un numero entero
+    Args:
+        cadena : cadena a evaluar
+
+    Returns:
+        bool: True si la cadena representa un numero entero, False si no
     """
     
-    if len(cadena) == 1: #Corroborar que si es el largo de la cadena es 1, que no sea un signo menos
+    if len(cadena) == 1:
         if ord(cadena) == 32:
             son_enteros = False
             return son_enteros
@@ -153,11 +187,14 @@ def es_entero(cadena:str) -> bool:
     return son_enteros
 
 
-def numero_entre_1_y_10(ingreso:int):
+def numero_entre_1_y_10(ingreso:int) -> bool:
     """
-    proposito:verifica si el numero entero ingresado esta entre 1 y 10 inclusive.
-    retorna: True si esta entre 1 y 10 , false si no.
-    parametro: ingreso/numero entero ingresado
+    proposito: valida si el numero ingresado esta entre 1 y 10
+    Args:
+        ingreso : numero a validar en formato int
+
+    Returns:
+        bool: True si el numero es valido False si no
     """
 
     if (ingreso) >= 1 and ingreso <= 10:
@@ -166,14 +203,20 @@ def numero_entre_1_y_10(ingreso:int):
     return salida
 
 
-def esta_en_lista(e,l):
+def esta_en_lista(e:None,l:list) -> bool:
     """
-    proposito:busca en una lista dada la existencia de un elemendo dado.
-    parametros: e/ elemento a buscar
-                l/ lista de elementos
+    proposito: verifica si un elemento esta en una lista
+    Args:
+        e : elemento a buscar
+        l : lista donde buscar
+
+    Returns:
+        bool: True si el elemento esta en la lista, False si no
     """
     salida = False
     for i in l:
        if i == e:
            salida = True
     return salida
+
+

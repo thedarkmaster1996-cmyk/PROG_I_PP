@@ -2,7 +2,15 @@ from validaciones import *
 from base_de_datos import *
 
 
-def ordenamiento_burbuja_list(lista):
+def ordenamiento_burbuja_list(lista:list) -> list:
+    """
+    proposito: ordena una lista de numeros de forma ascendente usando el metodo burbuja
+    Args:
+        lista : lista de numeros a ordenar
+
+    Returns:
+        list: lista ordenada
+    """
     n = len(lista)
     for i in range(n):
         for j in range(0,n - i - 1):
@@ -12,7 +20,16 @@ def ordenamiento_burbuja_list(lista):
 
 
 
-def ordenamiento_asc_o_des_nums(l_ordenar,selec):
+def ordenamiento_asc_o_des_nums(l_ordenar:list, selec:int) -> list:
+    """
+    proposito: ordena una lista de numeros de forma ascendente o descendente segun la seleccion del usuario
+    Args:
+        l_ordenar : lista de numeros a ordenar
+        selec (_type_): seleccion de ordenamiento 1 asc 2 des
+
+    Returns:
+        list: lista ordenada
+    """
 
     ingreso = selec
     salida = None
@@ -36,22 +53,14 @@ def ordenamiento_asc_o_des_nums(l_ordenar,selec):
 
 
 
-
-
-#                                             opcion 4 del menu 
-
-#cambiar nombre a clonar lista
-# copia una lista y trabaja con copias no cambia los valores de las originales
-
 def copiar_lista(lista:list) -> list:
+    
     """
-    Copia una lista por valor.
-
+    proposito: copia una lista y devuelve la copia
     Args:
-        lista (list): Lista a copiar.
-
+        lista : lista a copiar
     Returns:
-        list: Lista copiada por valor. 
+        list: lista copiada
     """
     lista_nueva = [0] * len(lista)
     for i in range(len(lista)):
@@ -60,12 +69,16 @@ def copiar_lista(lista:list) -> list:
     return lista_nueva
 
 
-####################
 
-        # el pycache falla si no tiene esta funcion en este archivo
+def sumar_fila_numeros(lista_de_numeros:list) -> int:
+    """_summary_
+    proposito: suma los numeros de una lista y devuelve la suma
+    Args:
+        lista_de_numeros : lista de numeros a sumar
 
-def sumar_fila_numeros(lista_de_numeros) -> int:
-    
+    Returns:
+        int: suma de los numeros
+    """
     acumulador = 0
     for numero in lista_de_numeros:
         acumulador += numero
@@ -73,23 +86,37 @@ def sumar_fila_numeros(lista_de_numeros) -> int:
 
 
 
+def promedio_alumno(matriz_de_notas:list, indice_de_alumno:int) -> float:
+    """
+    proposito: calcula el promedio de un alumno en la matriz de notas dada
+    Args:
+        matriz_de_notas : lista de listas con las calificaciones
+        indice_de_alumno : indice del alumno a promediar
 
-
-def promedio_alumno(matriz_de_notas,indice_de_alumno):
+    Returns:
+        float: promedio del alumno
+    """
     promedio = sumar_fila_numeros(matriz_de_notas[indice_de_alumno]) / len(matriz_de_notas[indice_de_alumno])
 
     return promedio
 
 
-def calcular_promedio_alumnos(estados_lista, notas_matriz, promedio_estudiantes):
+
+def calcular_promedio_alumnos(estados_lista, notas_matriz, promedio_estudiantes) -> None:
+    """
+    proposito: calcula el promedio de todos los alumnos y lo guarda en la lista de promedios
+    Args:
+        estados_lista :  lista de estados
+        notas_matriz :  lista de listas con las calificaciones
+        promedio_estudiantes :  lista de promedios
+    """
    
     for i in range(len(estados_lista)):
         if estados_lista[i] != 0 :
             promedio_estudiantes[i] = promedio_alumno(notas_matriz,i)
-    
-#################
 
-#Para ordenar y mostrar estudiantes por promedio:
+
+
 def ordenar_promedios(matriz_notas: list, lista_estados: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list,promedios_alumnos: list) -> None:
     """
     La función ordena y muestra a los estudiantes por promedio. 

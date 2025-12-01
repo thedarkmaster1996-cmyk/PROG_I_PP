@@ -58,6 +58,7 @@ def opcion_2():
     imprimir_lista(estudiantes_promedio,"PROMEDIOS",estado)
 
 
+
 def opcion_3():
     """
         proposito: calcula y muestra el promedio de los estudiantes
@@ -77,11 +78,13 @@ def opcion_4():
     ordenar_promedios(matriz_de_calificaciones , estado, estudiantes_legajo, estudiantes_nombre, estudiantes_genero, estudiantes_promedio)
    
 
+
 def opcion_5():
     """
         proposito: muestra la materia con mayor promedio general
     """
     promedio_materias(matriz_de_calificaciones)
+
 
 
 def opcion_6():
@@ -96,6 +99,7 @@ def opcion_6():
     buscar_alumno_por_legajo(estudiantes_legajo, estudiantes_nombre, estudiantes_genero, matriz_de_calificaciones, estudiantes_promedio)
 
 
+
 def opcion_7():
     """
         proposito: mostrar cuantas veces se repite cada calificación en una materia dada
@@ -104,10 +108,7 @@ def opcion_7():
 
 
 
-
 mensaje_menu = "\t\tBIENVENIDO A GESTION DE ALUMNOS\nOpciones :\n1 - Realizar la carga de los datos\n2 - Mostrar todos los datos\n3 - Calcular el promedio de los estudiante\n4 - Ordenar y mostrar los datos de los estudiantes asc/des\n5 - Mostrar la materia con mayor promedio general\n6 - mostrar todos los datos por legajo\n7 - mostrar las veces se repiten calificaciónes en una asignatura\n8 - salir"
-
-
 
 
 
