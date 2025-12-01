@@ -21,7 +21,7 @@ def opcion_1():
         cargar_genero_de_estudiante(estudiantes_genero,alumno_indice)
 
         cargar_legajo(estudiantes_legajo,alumno_indice)
-        
+
         cargar_notas_de_alumno(alumno_indice,matriz_de_calificaciones,estudiantes_nombre)
 
         estado[alumno_indice] = 1
@@ -154,7 +154,7 @@ def menu():
                 opcion_5()
 
             case 6:
-                print("\n BUSQUEDA DATOS ESTUDIANTE POR LEGAJO: \n")
+                print("\n BUSCAR ESTUDIANTE POR LEGAJO: \n")
                 opcion_6()
 
             case 7:
@@ -167,5 +167,4 @@ def menu():
 
 
 
-
-menu() 
+menu()

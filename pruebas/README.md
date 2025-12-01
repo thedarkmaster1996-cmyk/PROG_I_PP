@@ -1,2 +1,0 @@
-# PROG_I_PP
-PARCIAL 1
