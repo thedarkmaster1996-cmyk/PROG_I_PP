@@ -1,6 +1,6 @@
 from validaciones import *
 from base_de_datos import *
-from calculos import *
+
 
 def ordenamiento_burbuja_list(lista):
     n = len(lista)
@@ -58,6 +58,36 @@ def copiar_lista(lista:list) -> list:
         lista_nueva[i] = lista[i]
     
     return lista_nueva
+
+
+####################
+
+        # el pycache falla si no tiene esta funcion en este archivo
+
+def sumar_fila_numeros(lista_de_numeros) -> int:
+    
+    acumulador = 0
+    for numero in lista_de_numeros:
+        acumulador += numero
+    return acumulador
+
+
+
+
+
+def promedio_alumno(matriz_de_notas,indice_de_alumno):
+    promedio = sumar_fila_numeros(matriz_de_notas[indice_de_alumno]) / len(matriz_de_notas[indice_de_alumno])
+
+    return promedio
+
+
+def calcular_promedio_alumnos(estados_lista, notas_matriz, promedio_estudiantes):
+   
+    for i in range(len(estados_lista)):
+        if estados_lista[i] != 0 :
+            promedio_estudiantes[i] = promedio_alumno(notas_matriz,i)
+    
+#################
 
 #Para ordenar y mostrar estudiantes por promedio:
 def ordenar_promedios(matriz_notas: list, lista_estados: list, legajo_estudiante: list, nombre_estudiante: list, genero_estudiante: list,promedios_alumnos: list) -> None:

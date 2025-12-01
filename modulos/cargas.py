@@ -131,7 +131,7 @@ def cargar_legajo(lista_de_legajos,indice):
             valor = int(numero)
             if validaciones.esta_en_lista(valor,lista_de_legajos) == False:
             
-                lista_de_legajos[indice] = numero
+                lista_de_legajos[indice] = valor #modifique ctrol z si quiero volver
                 break
             else:print("\t\t-legajo existente-")
         else: print("\t\t-legajo invalido-\nintentelo nuevamente: ")

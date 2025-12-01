@@ -14,13 +14,15 @@ def opcion_1():
 
         alumno_indice = validaciones.buscar_indice_disponible(estado)
 
-        print(alumno_indice)
+        print(f"estado {alumno_indice + 1} disponible para carga de datos")
 
         cargar_apellido_nombre_estudiante(estudiantes_nombre,alumno_indice)
 
         cargar_genero_de_estudiante(estudiantes_genero,alumno_indice)
 
         cargar_legajo(estudiantes_legajo,alumno_indice)
+        
+        cargar_notas_de_alumno(alumno_indice,matriz_de_calificaciones,estudiantes_nombre)
 
         estado[alumno_indice] = 1
 
@@ -68,6 +70,7 @@ def opcion_5():
 
 
 def opcion_6():
+
     calcular_promedio_alumnos(estado,matriz_de_calificaciones,estudiantes_promedio)
 
     imprimir_lista(estudiantes_legajo,"LEGAJOS",estado)
@@ -76,9 +79,93 @@ def opcion_6():
 
 
 def opcion_7():
+
     mostar_notas_por_materia(matriz_de_calificaciones)
 
 
 
 
+mensaje_menu = "\t\tBIENVENIDO A GESTION DE ALUMNOS\nOpciones :\n1 - Realizar la carga de los datos\n2 - Mostrar todos los datos\n3 - Calcular el promedio de los estudiante\n4 - Ordenar y mostrar los datos de los estudiantes asc/des\n5 - Mostrar la materia con mayor promedio general\n6 - mostrar todos los datos por legajo\n7 - mostrar las veces se repiten calificaciónes en una asignatura\n8 - salir"
 
+
+def opcion_valida(opcion_ingresada) -> bool:
+    
+    salida = False
+    if ord(opcion_ingresada) >= 49 and ord(opcion_ingresada) <= 56:
+        salida = True
+    return salida
+
+
+def sin_datos_cargados(li_estados) -> bool:
+    """
+    proposito: verifica si hay datos cargados en el sistema
+    """
+    salida = True
+
+    for i in range(len(li_estados)):
+        if li_estados[i] == 1:
+            salida = False
+            break
+
+    return salida 
+
+
+
+def menu():
+
+
+    while True:
+        
+        opcion = 0
+        while True:
+
+            if sin_datos_cargados(estado):
+                print("\t\t--ADVERTENCIA: NO HAY DATOS CARGADOS EN EL SISTEMA--\npara contrinuar, por favor cargue\n")
+                opcion_1()
+            
+            print(mensaje_menu)
+            seleccion = input("Ingrese una opcion (1-8)\n: ")
+            if es_entero(seleccion):
+                opcion = int(seleccion)
+                if opcion >=1 and opcion <=8:
+                    break
+
+
+
+        match opcion:
+            case 1:
+                print("\nCARGA DE DATOS: \n")
+                opcion_1()
+
+            case 2:
+                print("\n MOSTRAR DATOS CARGADOS: \n")
+                opcion_2()
+
+            case 3:
+                print("\n VER PROMEDIO POR ESTUDIANTE: \n")
+                opcion_3()
+
+            case 4:
+                print("\n ORDENAR Y MOSTRAR ESTUDIANTES POR PROMEDIO: \n")
+                opcion_4()
+
+            case 5:
+                print("\n MOSTRAR LA/S MATERIA/S CON MAYOR PROMEDIO GENERAL: \n")
+                opcion_5()
+
+            case 6:
+                print("\n BUSQUEDA DATOS ESTUDIANTE POR LEGAJO: \n")
+                opcion_6()
+
+            case 7:
+                print("\n BUSCAR Y MOSTRAR CUANTAS VECES SE REPITE CADA CALIFICACIÓN: \n")
+                opcion_7()
+
+            case 8:
+                print("**HASTA PRONTO!!")
+                break
+
+
+
+
+menu() 
