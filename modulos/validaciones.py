@@ -17,9 +17,6 @@ def valor_de_1_a_5(valor_ingresado:str) -> bool:
     return salida
 
 
-
-
-
 def buscar_indice_disponible(lista_estados:list) -> int:
     """  
     proposito: busca el primer indice disponible en la lista de estados
@@ -38,8 +35,6 @@ def buscar_indice_disponible(lista_estados:list) -> int:
     if contador == 0:
         resultado = False
     return resultado
-
-
 
 
 def pasar_a_minuscula(texto_ingresado :str) -> str:
@@ -171,20 +166,20 @@ def es_entero(cadena:str) -> bool:
     Returns:
         bool: True si la cadena representa un numero entero, False si no
     """
-    
+    salida = False
     if len(cadena) == 1:
         if ord(cadena) == 32:
             son_enteros = False
-            return son_enteros
+            salida = son_enteros
 
     for i in range(len(cadena)):
         if (ord(cadena[i]) >= 48 and ord(cadena[i]) <= 57) or (ord(cadena[i]) == 45) or (ord(cadena[i]) == 32):
-            son_enteros = True
+            salida = True
         else:
-            son_enteros = False
+            salida = False
             break
 
-    return son_enteros
+    return salida
 
 
 def numero_entre_1_y_10(ingreso:int) -> bool:

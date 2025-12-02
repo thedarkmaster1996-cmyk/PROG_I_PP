@@ -168,7 +168,7 @@ def menu():
                 opcion_4()
 
             case 5:
-                print("\n MOSTRAR LA/S MATERIA/S CON MAYOR PROMEDIO GENERAL: \n")
+                print("\n MOSTRAR LA MATERIA CON MAYOR PROMEDIO GENERAL: \n")
                 opcion_5()
 
             case 6:

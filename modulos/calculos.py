@@ -78,7 +78,7 @@ def buscar_alumno_por_legajo(legajo_list: list, nombre_list: list, genero_list: 
         while solo_numeros(legajo_ingresado) == False or len(legajo_ingresado) != 6:
             
             legajo_ingresado = input("\t\tlegajo inexistente.\nIngrese el legajo que desea buscar\n: ")
-            validar_int = solo_numeros(legajo_ingresado)
+            
 
         for i in range(len(legajo_list)):
 

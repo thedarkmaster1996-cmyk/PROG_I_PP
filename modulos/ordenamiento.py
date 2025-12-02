@@ -20,6 +20,7 @@ def ordenamiento_burbuja_list(lista:list) -> list:
 
 
 
+
 def ordenamiento_asc_o_des_nums(l_ordenar:list, selec:int) -> list:
     """
     proposito: ordena una lista de numeros de forma ascendente o descendente segun la seleccion del usuario
@@ -179,22 +180,22 @@ def ordenar_promedios(matriz_notas: list, lista_estados: list, legajo_estudiante
                    
                    # lo mismo que el else pero al revez
                    
-                    #Swap de promedio
+                    #promedio
                     aux = nuevo_promedios[j] 
                     nuevo_promedios[j] = nuevo_promedios[j+1]
                     nuevo_promedios[j+1] = aux
 
-                    #Swap de legajo
+                    #legajo
                     aux = nuevo_legajos[j] 
                     nuevo_legajos[j] = nuevo_legajos[j+1]
                     nuevo_legajos[j+1] = aux
 
-                    #Swap de nombre
+                    #nombre
                     aux = nuevo_nombres[j]
                     nuevo_nombres[j] = nuevo_nombres[j+1]
                     nuevo_nombres[j+1] = aux
 
-                    #Swap de género
+                    #género
                     aux = nuevo_generos[j]
                     nuevo_generos[j] = nuevo_generos[j+1]
                     nuevo_generos[j+1] = aux
